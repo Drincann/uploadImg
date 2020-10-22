@@ -1,0 +1,6 @@
+{
+	"accessId" : "**",
+	"accessKey": "**",
+	"endPoint" : "http://oss-cn-beijing.aliyuncs.com",
+	"bucket"   : "gaolihaiimg"
+}
