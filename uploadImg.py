@@ -78,7 +78,6 @@ if __name__ == '__main__':
                 url = ossmanager.upload(cacheFilename, filename)
                 setClipText('![desc](' + url + ')')
                 print(url, end='\n\nuploadImg>')
-                print('uploadImg>', end='')
             else:
                 print('')
                 print('剪贴板中不存在有效文件', end='\n\nuploadImg>')
