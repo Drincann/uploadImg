@@ -66,9 +66,9 @@ if __name__ == '__main__':
 
     # 开启上传图片线程
     cacheFilename = 'cache.png'
-    from hook import hook as hookConstructor
-    def autoUpImg(key, status):
-        if key == 121 and status == 128:
+    from pynput import keyboard
+    def on_release(key):
+        if key == keyboard.Key.f10:
             # F10 弹起
             if saveClipImg(cacheFilename) == True:
                 filename = randomStr()
@@ -81,11 +81,9 @@ if __name__ == '__main__':
             else:
                 print('')
                 print('剪贴板中不存在有效文件', end='\n\nuploadImg>')
-                
 
-    hook = hookConstructor(keyb_callback=autoUpImg)
-    hook.start_keyboard_hook()
-
+    listener = keyboard.Listener(on_release=on_release)
+    listener.start()
 
     # 命令行
     print('\n图片上传\n\n')
