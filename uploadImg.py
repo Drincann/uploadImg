@@ -141,7 +141,6 @@ if __name__ == '__main__':
             continue
         if commend[0] == 'exit':
             # 删除 cache
-            hook.stop_keyboard_hook()
             if os.path.exists(cacheFilename) == True:
                 os.remove(cacheFilename)
             break
